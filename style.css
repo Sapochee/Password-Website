@@ -4,20 +4,16 @@ header {
     padding: 20px; 
 }
 
-
 body {
     font-family: "Times New Roman", Times, serif; 
     background-color: rgb(162, 107, 162);
 }
 
 .section {
-    text-align: center; /
-    text-decoration-color: navy;
+    text-align: center;
     margin: 10px; 
     padding: 10px; 
 }
-
-
 
 nav ul {
     list-style-type: none; 
@@ -29,7 +25,7 @@ nav ul li {
     margin: 0 10px; 
 }
 
-
 nav ul li:hover {
     background-color: lightgreen; 
 }
+
