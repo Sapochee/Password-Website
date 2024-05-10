@@ -29,3 +29,18 @@ nav ul li:hover {
     background-color: lightgreen; 
 }
 
+.purple-button {
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.purple-button:hover {
+    background-color: plum;
+}
+
+
