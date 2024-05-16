@@ -14,6 +14,11 @@ password generated would more likely be more unique for the user.
 
 The current database for storing generated passwords is JSON based due to the small scale but can be transferred to a database management system like MySQL, PostgreSQL, or MongoDB for a more scalable solution.
 
+### Targeted Browsers
+The Password Checker application is designed to be compatible with a wide range of browsers on desktop platforms.
+
+- Browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
+
 ## Developer Manual
 
 ### Installation
