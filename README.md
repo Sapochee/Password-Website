@@ -1,5 +1,7 @@
 # Password Checker
 
+[Developer Manual](#developer-manual)
+
 ### Proposal
 This proposal plans solve the problem of generating more secure passwords through the utilization of the __HaveIBeenPwned__ security API. We want to create a robust solution
 to enhance password security, recognizing the need to safeguard sensitive information in digital spaces. By using this API, we aim to develop a platform that enables users to effortlessly
