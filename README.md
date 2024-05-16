@@ -28,8 +28,8 @@ The current database for storing generated passwords is JSON based due to the sm
 3. Open the `home.html` file in your web browser
 
 ### How to Run/Test
-1. Navigate to the `Password Generator/Checker` page.
+1. Navigate to the *Password Generator/Checker* page.
 
-2. To check an existing password, enter it in the first box and click the `Check Password` button to see if and how many times it has been breached.
+2. To check an existing password, enter it in the first box and click the *Check Password* button to see if and how many times it has been breached.
 
-   To generate a new password, enter the preferred length in the second box and click the `Generate Password` button.
+   To generate a new password, enter the preferred length in the second box and click the *Generate Password* button.
