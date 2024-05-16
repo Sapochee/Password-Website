@@ -17,7 +17,7 @@ The current database for storing generated passwords is JSON based due to the sm
 ### Targeted Browsers
 The Password Checker application is designed to be compatible with a wide range of browsers on desktop platforms such as:
 
-    Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
+Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
 
 ## Developer Manual
 
