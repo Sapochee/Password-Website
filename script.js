@@ -43,3 +43,38 @@ document.getElementById('passwordForm').addEventListener('submit', function(even
     passwordChecker(password);
     document.getElementById('password').value = '';
 });
+
+function generatePassword(length) {
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_";
+    let password = "";
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
+    return password;
+}
+
+function storeGeneratedPassword(password) {
+    fetch('generated_passwords.json')
+    .then(response => response.json())
+    .then(data => {
+        data.Passwords.push({ generatedPassword: password });
+        const jsonData = JSON.stringify(data);
+        fetch('generated_passwords.json', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        });
+    })
+    .catch(error => console.error(error));
+}
+
+document.getElementById('generatePasswordForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const passwordLength = document.getElementById('passwordLength').value;
+    const generatedPassword = generatePassword(passwordLength);
+    document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
+    storeGeneratedPassword(generatedPassword);
+});
