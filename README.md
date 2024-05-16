@@ -12,4 +12,4 @@ identify what kinds of information has been breached and what passwords to avoid
 sure that there are no overlaps with any currently existing passwords meaning that every
 password generated would more likely be more unique for the user.
 
-The current database for storing generated passwords is JSON based due to the samll scale but can be transferred to a database management system like MySQL, PostgreSQL, or MongoDB for a more scalable solution.
+The current database for storing generated passwords is JSON based due to the small scale but can be transferred to a database management system like MySQL, PostgreSQL, or MongoDB for a more scalable solution.
