@@ -7,39 +7,39 @@ function showCopyright() {
     alert("Copyright © 2024 Password Manager. All rights reserved.");
 }
 
-function passwordGenerator() {
+function passwordChecker(password) {
     //converts input into SHA-1 hash for API
-    var myString = "hello";
-    var text = sha1(myString);
-
+    var text = sha1(password).toUpperCase();
     //splits up SHA-1 hash by first 5 characters
     var firstHash = text.substring(0, 5);
     var restHash = text.substring(5);
-    
-    const requestOptions = {
-    method: "GET",
-    redirect: "follow"
-    };
+    console.log(text)
+    console.log(firstHash, restHash)
 
-    fetch(`https://api.pwnedpasswords.com/range/${firstHash}`, requestOptions)
+    fetch(`https://api.pwnedpasswords.com/range/${firstHash}`)
     .then((response) => response.text())
     .then((result) => {
-        const lines = result.split('\n');
-        var amountOfBreaches = 0;
+        const lines = result.split('\n').map(line => line.trim());
+        console.log(result)
+        console.log(lines)
         lines.forEach(line => {
             //split each line by ':' to separate the hash and the count of times breached
             const [hash, count] = line.split(':');
+            console.log(hash, count)
             if (hash == restHash) {
-                console.log("Number of Breaches:", count);
-                amountOfBreaches = count
-                return amountOfBreaches
+                document.getElementById('result').innerText = `Number of Password Breaches: ${count}`;
+                return;
             }
-            else {
-                console.log("Could not find password in database")
-                return
-            }
-        })
+        });
     })
     .catch((error) => console.error(error));
 
 }
+
+document.getElementById('passwordForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var password = document.getElementById('password').value;
+    document.getElementById('result').innerText = '';
+    passwordChecker(password);
+    document.getElementById('password').value = '';
+});
