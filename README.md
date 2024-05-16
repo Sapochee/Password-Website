@@ -13,3 +13,16 @@ sure that there are no overlaps with any currently existing passwords meaning th
 password generated would more likely be more unique for the user.
 
 The current database for storing generated passwords is JSON based due to the small scale but can be transferred to a database management system like MySQL, PostgreSQL, or MongoDB for a more scalable solution.
+
+## Developer Manual
+
+### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Sapochee/Password-Website.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd Password-Website
+    ```
+3. Open the `home.html` file in your web browser
