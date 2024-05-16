@@ -48,3 +48,16 @@ The current database for storing generated passwords is JSON based due to the sm
     - Description: Generates a new, secure password with the specified length.
     - Request Body: JSON object with a single key: `length` (integer)
     - Response: JSON object with a single key: `password` (string)
+
+### Bugs
+No known bugs in current state.
+
+### Roadmap for Future
+- Implement user account functionality, allowing users to store and manage their passwords securely.
+
+- Explore integration options with popular password managers to provide a seamless experience for users.
+
+- Develop a password strength meter to provide users with feedback on the strength of their passwords.
+
+- Add support for multiple languages.
+
