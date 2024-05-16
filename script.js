@@ -27,8 +27,10 @@ function passwordChecker(password) {
             const [hash, count] = line.split(':');
             console.log(hash, count)
             if (hash == restHash) {
-                document.getElementById('result').innerText = `Number of Password Breaches: ${count}`;
+                document.getElementById('result').innerText = `Number of Password Breaches: ${count}.`;
                 return;
+            } else {
+                document.getElementById('result').innerText = `Password has not been breached.`;
             }
         });
     })
