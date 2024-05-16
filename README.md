@@ -36,15 +36,15 @@ The current database for storing generated passwords is JSON based due to the sm
 
 ### API Endpoints
 1. Password Check Endpoint
-- **Endpoint:** `/check-password`
-- **Method:** POST
-- **Description:** Checks if a password has been breached by comparing its SHA-1 hash prefix with the HaveIBeenPwned database.
-- **Request Body:** JSON object with a single key: `password` (string)
-- **Response:** JSON object with a single key: `breached` (boolean)
+    - Endpoint: `/check-password`
+    - Method: POST
+    - Description: Checks if a password has been breached by comparing its SHA-1 hash prefix with the HaveIBeenPwned database.
+    - Request Body: JSON object with a single key: `password` (string)
+    - Response: JSON object with a single key: `breached` (boolean)
 
 2. Password Generate Endpoint
-- **Endpoint:** `/generate-password`
-- **Method:** POST
-- **Description:** Generates a new, secure password with the specified length.
-- **Request Body:** JSON object with a single key: `length` (integer)
-- **Response:** JSON object with a single key: `password` (string)
+    - Endpoint: `/generate-password`
+    - Method: POST
+    - Description: Generates a new, secure password with the specified length.
+    - Request Body: JSON object with a single key: `length` (integer)
+    - Response: JSON object with a single key: `password` (string)
