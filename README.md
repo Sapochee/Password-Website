@@ -17,9 +17,7 @@ password generated would more likely be more unique for the user.
 The current database for storing generated passwords is JSON based due to the small scale but can be transferred to a database management system like MySQL, PostgreSQL, or MongoDB for a more scalable solution.
 
 ### Targeted Browsers
-The Password Checker application is designed to be compatible with a wide range of browsers on desktop platforms such as:
-
-Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
+The Password Checker application is designed to be compatible with any desktop platform using the Google Chrome Browser with the Allow CORS: Access-Control-Allow-Origin extension installed.
 
 ## Developer Manual
 
@@ -40,6 +38,8 @@ Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
 2. To check an existing password, enter it in the first box and click the *Check Password* button to see if and how many times it has been breached.
 
    To generate a new password, enter the preferred length in the second box and click the *Generate Password* button.
+
+   You may also use the specified voice commands to perform these tasks. Instructions are at the bottom right of the page.
 
 ### API Endpoints
 1. Password Generate Endpoint

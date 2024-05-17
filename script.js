@@ -1,3 +1,53 @@
+// Voice commands
+if (annyang) {
+    var commands = {
+
+        // Switches between pages, even if user says "password manager"
+        'Navigate to *page': function(page) {
+            if (page.toLowerCase().includes("password")) {
+                window.location.href = "password.html";
+            } else {
+                window.location.href = page.toLowerCase().replace(/\s+/g, '-') + '.html';
+            }
+        },
+
+        // Generates new password between 5-20 characters in length
+        'Generate new password': function() {
+            var passwordLength = randomIntFromInterval(5, 20);
+            var generatedPassword = generatePassword(passwordLength);
+            document.getElementById('passwordLength').value = passwordLength; // Set spoken length in the input box
+            document.getElementById('generatedPassword').textContent = "Generated Password: " + generatedPassword; // Display result
+        },
+
+        // Checks specified password
+        'Check password :password': function(password) {
+            document.getElementById('password').value = password.toLowerCase(); // Set spoken password in the input box
+            passwordChecker(password);
+        }
+        
+    }
+    annyang.addCommands(commands);
+};
+
+// Turn on audio
+document.getElementById('turn-on-audio').addEventListener('click', function () {
+    if (annyang) {
+        annyang.start({continuous: true, autoRestart: false});
+    }
+});
+
+// Turn off audio
+document.getElementById('turn-off-audio').addEventListener('click', function () {
+    if (annyang) {
+        annyang.abort(); 
+    }
+});
+
+// Random int between values
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 // Contact info & Copyright info button
 function showContactInfo() {
     window.location.href = "contact.html";
