@@ -42,13 +42,7 @@ Google Chrome, Mozilla Firefox, Microsoft Edge, Safari
    To generate a new password, enter the preferred length in the second box and click the *Generate Password* button.
 
 ### API Endpoints
-1. Password Check Endpoint
-    - Endpoint: `/check-password`
-    - Method: POST
-    - Description: Checks if a password has been breached by comparing its SHA-1 hash prefix with the HaveIBeenPwned database.
-    - Request Body: JSON object with a single key: `password` (string)
-
-2. Password Generate Endpoint
+1. Password Generate Endpoint
     - Endpoint: `/generate-password`
     - Method: POST
     - Description: Generates a new, secure password with the specified length.
