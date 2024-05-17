@@ -80,3 +80,50 @@ nav ul li:hover {
     color: #fff;
 }
 
+
+.dashboard {
+    display: flex;
+    justify-content: center; /* Removed stray forward slash */
+    align-items: center;
+    flex-wrap: wrap; 
+    margin-top: 50px;
+}
+
+.dashboard-item {
+    width: 250px;
+    
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    margin: 10px; 
+    box-sizing: border-box; 
+}
+
+.dashboard-item h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.dashboard-item p {
+    margin-bottom: 5px;
+    font-size: 14px; 
+    max-height: 200px; 
+    overflow: hidden;
+}
+
+.dashboard-item a {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: plum;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dashboard-item a:hover {
+    background-color: purple;
+}
+
