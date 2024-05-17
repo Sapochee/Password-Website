@@ -1,10 +1,10 @@
 // Contact info & Copyright info button
 function showContactInfo() {
-    alert("Contact information: example@example.com");
+    window.location.href = "contact.html";
 }
 
 function showCopyright() {
-    alert("Copyright © 2024 Password Manager. All rights reserved.");
+    window.location.href = "copyright.html";
 }
 
 function passwordChecker(password) {
