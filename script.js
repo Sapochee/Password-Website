@@ -104,28 +104,10 @@ function generatePassword(length) {
     return password;
 }
 
-function storeGeneratedPassword(password) {
-    fetch('generated_passwords.json')
-    .then(response => response.json())
-    .then(data => {
-        data.Passwords.push({ generatedPassword: password });
-        const jsonData = JSON.stringify(data);
-        fetch('generated_passwords.json', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: jsonData
-        });
-    })
-    .catch(error => console.error(error));
-}
-
 document.getElementById('generatePasswordForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const passwordLength = document.getElementById('passwordLength').value;
     const generatedPassword = generatePassword(passwordLength);
     document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
-    storeGeneratedPassword(generatedPassword);
 });
 
