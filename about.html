@@ -1,42 +1,56 @@
 <html>
-    <head>
-        <title>INST377 Final Project</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-   
-    <body>
-        <!-- Header Section -->
-        <header class="section">
-            <h1>Password Generator: About Page</h1>
-        </header>
+
+<head>
+    <title>INST377 Final Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="section">
+        <h1>Password Generator: Home Page</h1>
+    </header>
 
 
-        <!-- Navigation Menu -->
-        <nav class="section">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="password.html">Password Manager</a></li>
-            </ul>
-        </nav>
 
-        <!-- Audio Instructions Box-->
-        <div id="audio-instructions" class="audio-instructions-box">
-            <p>Audio Instructions:</p>
-            <ul>
-                <li>Say "Navigate to [page]" to navigate to the specified page.</li>
-            </ul>
-            <button id="turn-on-audio">Turn On Audio</button>
-            <button id="turn-off-audio">Turn Off Audio</button>
-        </div>
 
-        <!-- Footer Section -->
-        <footer class="section">
-            <button class="purple-button" onclick="showContactInfo()">Contact Info</button>
-            <button class="purple-button" onclick="showCopyright()">Copyright Info</button>
-        </footer>
+    <!-- Audio Instructions Box-->
+    <div id="audio-instructions" class="audio-instructions-box">
+        <p>Audio Instructions:</p>
+        <ul>
+            <li>Say "Navigate to [page]" to navigate to the specified page.</li>
+        </ul>
+        <button id="turn-on-audio">Turn On Audio</button>
+        <button id="turn-off-audio">Turn Off Audio</button>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+<!-- Main Dashboard Section -->
+<section class="dashboard section">
+    <div class="dashboard-item">
+        <h1>About Page</h1>
+        <p>As the concern for password breaches grows every moment, we decided that it was time to create a user
+            friendly program which provides strong and unbreached passwords.
+            Alongside our generator, we provide a convenient way to query your old passwords to analyze whether or not
+            your password has been breached in the past or if it is safe to use.
+            Our program provides these key points: 
+        </p>
+        <br>
+        <p>
+            Password Generation: Need a strong, unique password? Our program generates random passwords of varying
+            lengths, ensuring that your accounts are protected against brute-force attacks.
+            <br>
+            Password Strength Analysis: Worried about the strength of your passwords? Our built-in password checker
+            analyzes the strength of your passwords and alerts you to any potential vulnerabilities.
+            <br>
+            Accessibility: Whether you're at home or on the go, our program is accessible across multiple devices, allowing you to manage your passwords with ease wherever you are.
+        </p>
+        <a href="home.html">Home Page</a>
+    </div>
+
 </html>

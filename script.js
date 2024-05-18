@@ -128,3 +128,4 @@ document.getElementById('generatePasswordForm').addEventListener('submit', funct
     document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
     storeGeneratedPassword(generatedPassword);
 });
+
