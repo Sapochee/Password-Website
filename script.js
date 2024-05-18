@@ -111,3 +111,11 @@ document.getElementById('generatePasswordForm').addEventListener('submit', funct
     document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
 });
 
+/*
+*    var host = window.location.origin;
+*    await fetch(`${host}/passwords`)
+*        .then((res) => res.json())
+*        .then((res) => {
+*            consoe.log(res)
+*        })
+*/
