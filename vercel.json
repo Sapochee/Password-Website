@@ -13,8 +13,9 @@
         }
     ],
     "redirects": [
-        { "source": "/public", 
-        "destination": "/initialPage.html", 
-        "permanent": false }
+        {
+            "destination": "/initialPage.html", 
+            "permanent": false 
+        }
     ]
 }
