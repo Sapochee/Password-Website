@@ -12,6 +12,8 @@
     "@supabase/supabase-js": "^2.43.2",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "simple-slider": "^1.0.1",
+    "smart-webcomponents": "^19.0.8"
   }
 }
