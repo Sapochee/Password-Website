@@ -35,10 +35,11 @@ app.get('/passwords', async (req, res) => {
 app.post('/passwords', async (req, res) => {
     console.log('Adding password')
     console.log(req.body)    
+    var password = req.body.generated_password;
     
     const { data, error } = await supabase
         .from('generatedPasswords')
-        .insert({ generated_password: "PasswordTest" })
+        .insert({ 'generated_password': password })
         .select()
     
     if(error) {
