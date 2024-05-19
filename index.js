@@ -12,7 +12,7 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey)
 
 app.get('/', (req, res) => {
-    res.sendFile('public/home.html', { root: __dirname })
+    res.sendFile('public/initialPage.html', { root: __dirname })
 })
 
 app.get('/passwords', async (req, res) => {
