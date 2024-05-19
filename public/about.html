@@ -66,6 +66,14 @@
             <h2>Random Quote</h2>
             <p id="quote">Loading...</p>
         </div>
+
+        <!-- NASA APOD Section -->
+        <div class="dashboard-item">
+            <h2>NASA Astronomy Picture of the Day</h2>
+            <img id="apodImage" src="" alt="Astronomy Picture of the Day" style="max-width: 100%; height: auto;">
+            <p id="apodTitle">Loading title...</p>
+            <p id="apodExplanation">Loading explanation...</p>
+        </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
@@ -80,6 +88,26 @@
                 .catch(error => {
                     document.getElementById('quote').innerText = 'Failed to load quote';
                     console.error('Error fetching quote:', error);
+                });
+
+            const apiKey = 'GggW0khqDnZYfYLVtCmhohTh1sbTih5cCOnmsMqB'; // Your NASA API key
+            fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('NASA APOD data:', data); // Debugging: Log the fetched data
+                    if (data.media_type === 'image') {
+                        document.getElementById('apodImage').src = data.url;
+                        document.getElementById('apodTitle').innerText = data.title;
+                        document.getElementById('apodExplanation').innerText = data.explanation;
+                    } else {
+                        document.getElementById('apodTitle').innerText = 'NASA APOD is not an image today.';
+                        document.getElementById('apodExplanation').innerText = 'Check back tomorrow for a new image!';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('apodTitle').innerText = 'Failed to load APOD';
+                    document.getElementById('apodExplanation').innerText = 'Failed to load explanation';
+                    console.error('Error fetching APOD:', error);
                 });
         };
     </script>
