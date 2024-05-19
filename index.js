@@ -5,14 +5,14 @@ const express = require('express')
 const app = express()
 const port = 5501
 app.use(bodyParser.json())
-app.use(express.static(__dirname))
+app.use(express.static(__dirname + '/public'))
 
 const supabaseUrl = 'https://ucqcwfhauugcwaueziit.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjcWN3ZmhhdXVnY3dhdWV6aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYwNTQyNzgsImV4cCI6MjAzMTYzMDI3OH0.ohbk1W24Xr7FAbSsQrUE0iSBItjAEsoZeVurQ_afu6A'
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey)
 
 app.get('/', (req, res) => {
-    res.sendFile('home.html', { root: __dirname })
+    res.sendFile('public/home.html', { root: __dirname })
 })
 
 app.get('/passwords', async (req, res) => {
