@@ -1,69 +1,88 @@
+<!DOCTYPE html>
 <html>
 
-    <head>
-        <title>INST377 Final Project</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <title>INST377 Final Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <!-- Header Section -->
-        <header class="section">
-            <h1>Password Generator: About Page</h1>
-        </header>
+<body>
+    <!-- Header Section -->
+    <header class="section">
+        <h1>Password Generator: About Page</h1>
+    </header>
 
-        <!-- Audio Instructions Box-->
-        <div id="audio-instructions" class="audio-instructions-box">
-            <p>Audio Instructions:</p>
-            <ul>
-                <li>Say "Navigate to [page]" to navigate to the specified page.</li>
-            </ul>
-            <button id="turn-on-audio">Turn On Audio</button>
-            <button id="turn-off-audio">Turn Off Audio</button>
+    <!-- Audio Instructions Box-->
+    <div id="audio-instructions" class="audio-instructions-box">
+        <p>Audio Instructions:</p>
+        <ul>
+            <li>Say "Navigate to [page]" to navigate to the specified page.</li>
+        </ul>
+        <button id="turn-on-audio">Turn On Audio</button>
+        <button id="turn-off-audio">Turn Off Audio</button>
+    </div>
+
+    <!-- Main Dashboard -->
+    <section class="dashboard section">
+        <div class="dashboard-item">
+            <h1>About Page</h1>
+            <p>As the concern for password breaches grows every moment, we decided that it was time to create a user
+                friendly program which provides strong and unbreached passwords.
+                Alongside our generator, we provide a convenient way to query your old passwords to analyze whether or not
+                your password has been breached in the past or if it is safe to use.
+                Our program provides these key points: 
+            </p>
+            <br>
+            <p>
+                Password Generation: Need a strong, unique password? Our program generates random passwords of varying
+                lengths, ensuring that your accounts are protected against brute-force attacks.
+                <br>
+                Password Strength Analysis: Worried about the strength of your passwords? Our built-in password checker
+                analyzes the strength of your passwords and alerts you to any potential vulnerabilities.
+                <br>
+                Accessibility: Whether you're at home or on the go, our program is accessible across multiple devices, allowing you to manage your passwords with ease wherever you are.
+            </p>
+            <a href="home.html">Home Page</a>
         </div>
 
-        <!-- Main Dashboard -->
-        <section class="dashboard section">
-            <div class="dashboard-item">
-                <h1>About Page</h1>
-                <p>As the concern for password breaches grows every moment, we decided that it was time to create a user
-                    friendly program which provides strong and unbreached passwords.
-                    Alongside our generator, we provide a convenient way to query your old passwords to analyze whether or not
-                    your password has been breached in the past or if it is safe to use.
-                    Our program provides these key points: 
-                </p>
+        <!-- Pwned Passwords API Section -->
+        <div class="dashboard-item">
+            <h1>Pwned Passwords API</h1>
+            <p>Pwned Passwords are a collection of passwords that have been exposed in data breaches. This service allows you to check if your password has been compromised by querying a database of hashed passwords.</p>
+            <br>
+            <p>
+                <strong>API Functionality:</strong> The Pwned Passwords API uses a k-Anonymity model to protect the value of the source password. Only the first 5 characters of the SHA-1 hash are sent to the API, and the response contains all matching hashes with their breach counts. You can then check if your full hash is among the returned results.
                 <br>
-                <p>
-                    Password Generation: Need a strong, unique password? Our program generates random passwords of varying
-                    lengths, ensuring that your accounts are protected against brute-force attacks.
-                    <br>
-                    Password Strength Analysis: Worried about the strength of your passwords? Our built-in password checker
-                    analyzes the strength of your passwords and alerts you to any potential vulnerabilities.
-                    <br>
-                    Accessibility: Whether you're at home or on the go, our program is accessible across multiple devices, allowing you to manage your passwords with ease wherever you are.
-                </p>
-                <a href="home.html">Home Page</a>
-            </div>
-
-            <!-- Pwned Passwords API Section -->
-            <div class="dashboard-item">
-                <h1>Pwned Passwords API</h1>
-                <p>Pwned Passwords are a collection of passwords that have been exposed in data breaches. This service allows you to check if your password has been compromised by querying a database of hashed passwords.</p>
+                <strong>How to Use:</strong> To check a password, send the first 5 characters of its SHA-1 hash to the following endpoint:
                 <br>
-                <p>
-                    <strong>API Functionality:</strong> The Pwned Passwords API uses a k-Anonymity model to protect the value of the source password. Only the first 5 characters of the SHA-1 hash are sent to the API, and the response contains all matching hashes with their breach counts. You can then check if your full hash is among the returned results.
-                    <br>
-                    <strong>How to Use:</strong> To check a password, send the first 5 characters of its SHA-1 hash to the following endpoint:
-                    <br>
-                    <code>GET https://api.pwnedpasswords.com/range/{first 5 hash chars}</code>
-                    <br>
-                    If a matching hash is found, the API responds with the suffixes and breach counts. This allows you to determine if your password has been compromised without exposing it.
-                </p>
-            </div>
-        </section>
+                <code>GET https://api.pwnedpasswords.com/range/{first 5 hash chars}</code>
+                <br>
+                If a matching hash is found, the API responds with the suffixes and breach counts. This allows you to determine if your password has been compromised without exposing it.
+            </p>
+        </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
-        <script src="script.js"></script>
+        <!-- Quote of the Page Load Section -->
+        <div class="dashboard-item quote-box">
+            <h2>Random Quote</h2>
+            <p id="quote">Loading...</p>
+        </div>
+    </section>
 
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script>
+        window.onload = function() {
+            fetch('https://api.quotable.io/random')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('quote').innerText = `"${data.content}" - ${data.author}`;
+                })
+                .catch(error => {
+                    document.getElementById('quote').innerText = 'Failed to load quote';
+                    console.error('Error fetching quote:', error);
+                });
+        };
+    </script>
+</body>
 
 </html>
+
