@@ -1,3 +1,6 @@
+var host = window.location.origin;
+console.log(host)
+
 // Voice commands
 if (annyang) {
     var commands = {
@@ -104,18 +107,26 @@ function generatePassword(length) {
     return password;
 }
 
+async function addPassword(pass) {
+    await fetch(`${host}/passwords`, {
+        method: 'POST',
+        body: JSON.stringify({
+            "generated_password": pass,
+        }),
+        headers: {
+            "Content-type": "application/json"
+        }
+    })
+    .then((res) => res.json())
+    .then((res) => {
+        console.log(res)
+    })
+}
+
 document.getElementById('generatePasswordForm').addEventListener('submit', function(event) {
     event.preventDefault();
     const passwordLength = document.getElementById('passwordLength').value;
     const generatedPassword = generatePassword(passwordLength);
+    addPassword(generatedPassword)
     document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
 });
-
-/*
-*    var host = window.location.origin;
-*    await fetch(`${host}/passwords`)
-*        .then((res) => res.json())
-*        .then((res) => {
-*            consoe.log(res)
-*        })
-*/

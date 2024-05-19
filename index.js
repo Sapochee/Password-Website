@@ -3,9 +3,9 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 const app = express()
-const port = 3000
+const port = 5501
 app.use(bodyParser.json())
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname))
 
 const supabaseUrl = 'https://ucqcwfhauugcwaueziit.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjcWN3ZmhhdXVnY3dhdWV6aWl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYwNTQyNzgsImV4cCI6MjAzMTYzMDI3OH0.ohbk1W24Xr7FAbSsQrUE0iSBItjAEsoZeVurQ_afu6A'
@@ -13,11 +13,13 @@ const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey)
 
 app.get('/', (req, res) => {
     res.sendFile('home.html', { root: __dirname })
+    res.sendFile('about.html', { root: __dirname })
+    res.sendFile('contact.html', { root: __dirname })
+    res.sendFile('password.html', { root: __dirname })
 })
 
 app.get('/passwords', async (req, res) => {
     console.log('Attempting to get password data')
-
 
     const { data, error } = await supabase
         .from('generatedPasswords')
@@ -32,15 +34,13 @@ app.get('/passwords', async (req, res) => {
 
 app.post('/passwords', async (req, res) => {
     console.log('Adding password')
-    console.log(req.body)
-    var password = req.body.password;
-
-
+    console.log(req.body)    
+    
     const { data, error } = await supabase
         .from('generatedPasswords')
-        .insert({ generated_password: "test" })
+        .insert({ generated_password: "PasswordTest" })
         .select()
-
+    
     if(error) {
         console.log('Error')
         res.send(error)
