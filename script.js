@@ -107,6 +107,7 @@ function generatePassword(length) {
     return password;
 }
 
+// Add generated password into database
 async function addPassword(pass) {
     await fetch(`${host}/passwords`, {
         method: 'POST',
