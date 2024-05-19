@@ -53,4 +53,21 @@
         <a href="home.html">Home Page</a>
     </div>
 
+        <!-- Pwned Passwords API Section -->
+        <div class="dashboard-item">
+            <h1>Pwned Passwords API</h1>
+            <p>Pwned Passwords are a collection of passwords that have been exposed in data breaches. This service allows you to check if your password has been compromised by querying a database of hashed passwords.</p>
+            <br>
+            <p>
+                <strong>API Functionality:</strong> The Pwned Passwords API uses a k-Anonymity model to protect the value of the source password. Only the first 5 characters of the SHA-1 hash are sent to the API, and the response contains all matching hashes with their breach counts. You can then check if your full hash is among the returned results.
+                <br>
+                <strong>How to Use:</strong> To check a password, send the first 5 characters of its SHA-1 hash to the following endpoint:
+                <br>
+                <code>GET https://api.pwnedpasswords.com/range/{first 5 hash chars}</code>
+                <br>
+                If a matching hash is found, the API responds with the suffixes and breach counts. This allows you to determine if your password has been compromised without exposing it.
+            </p>
+        </div>
+    </section>
+
 </html>
