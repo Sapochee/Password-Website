@@ -75,15 +75,23 @@ function passwordChecker(password) {
         const lines = result.split('\n').map(line => line.trim());
         console.log(result)
         console.log(lines)
+
+        let passwordFound = false;
+
         lines.forEach(line => {
             //split each line by ':' to separate the hash and the count of times breached
             const [hash, count] = line.split(':');
             console.log(hash, count)
             if (hash == restHash) {
                 document.getElementById('result').innerText = `Number of Password Breaches: ${count}`;
+                passwordFound = true;
                 return;
             }
         });
+
+        if (!passwordFound) {
+            document.getElementById('result').innerText = "Your password was not found in the database, this means you are safe!";
+        }
     })
     .catch((error) => console.error(error));
 
@@ -129,5 +137,5 @@ document.getElementById('generatePasswordForm').addEventListener('submit', funct
     const passwordLength = document.getElementById('passwordLength').value;
     const generatedPassword = generatePassword(passwordLength);
     addPassword(generatedPassword)
-    document.getElementById('generatedPassword').innerText = `Generated Password: ${generatedPassword}`;
+    document.getElementById('generatedPassword').innerHTML = `Generated Password: <b>${generatedPassword}</b><br>This password will now be stored in our private database! Enjoy your new unique password!`;
 });
