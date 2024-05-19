@@ -11,5 +11,10 @@
             "src": "/(.*)",
             "dest": "/"
         }
+    ],
+    "redirects": [
+        { "source": "/public", 
+        "destination": "/initialPage.html", 
+        "permanent": false }
     ]
 }
