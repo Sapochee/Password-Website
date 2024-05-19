@@ -137,5 +137,5 @@ document.getElementById('generatePasswordForm').addEventListener('submit', funct
     const passwordLength = document.getElementById('passwordLength').value;
     const generatedPassword = generatePassword(passwordLength);
     addPassword(generatedPassword)
-    document.getElementById('generatedPassword').innerHTML = `Generated Password: <b>${generatedPassword}</b><br>This password will now be stored in our private database! Enjoy your new unique password!`;
+    document.getElementById('generatedPassword').innerHTML = `Generated Password: <b>${generatedPassword}</b><br>This password will now be stored in our private database so it won't be generated again! Enjoy your new unique password!`;
 });
