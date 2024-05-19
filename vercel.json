@@ -8,13 +8,18 @@
     ],
     "routes": [
         {
+            "src": "/",
+            "dest": "/public/initialPage.html"
+        },
+        {
             "src": "/(.*)",
             "dest": "/"
         }
     ],
     "redirects": [
-        {
-            "destination": "/initialPage.html", 
+        { 
+            "source": "/public", 
+            "destination": "/public/initialPage.html", 
             "permanent": false 
         }
     ]
