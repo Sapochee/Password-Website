@@ -1,5 +1,5 @@
 # Password Checker
-https://password-website.vercel.app/
+https://password-website-sapochees-projects.vercel.app/
 
 [Developer Manual](#developer-manual)
 
