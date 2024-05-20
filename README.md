@@ -31,7 +31,7 @@ The Password Checker application is designed to be compatible with any desktop p
     ```bash
     cd Password-Website
     ```
-3. Open the `home.html` file in your web browser
+3. Open the `initialPage.html` file in your web browser
 
 ### How to Run/Test
 1. Navigate to the *Password Generator/Checker* page from `home.html` or by directly opening `password.html`.
